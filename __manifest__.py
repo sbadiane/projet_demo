@@ -8,5 +8,10 @@
     'description': """ Gestion des demo """,
     'application': True,
     'module_type' : 'officiel',
-    'data': [ ],
+    'data': [
+        'views/contact.xml',
+        'views/purchase.xml',
+        'security/ir.model.access.csv',
+
+     ],
 }
