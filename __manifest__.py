@@ -2,16 +2,16 @@
 {
     'name': "test_demo",
     'version': '17.0.1.0.0',
-    'depends': ["base"],
+    'depends': ["base","purchase"],
     "author":"Unikerp",
     "website" : "www.unikerp.com",
     'description': """ Gestion des demo """,
     'application': True,
     'module_type' : 'officiel',
     'data': [
-        'views/contact.xml',
-        'views/purchase.xml',
-        'security/ir.model.access.csv',
+        # 'views/contact.xml',
+        # 'views/purchase.xml',
+        # 'security/ir.model.access.csv',
 
      ],
 }
