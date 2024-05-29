@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="employer_id" model="ir.ui.view">
+    <field name="name">employer.form</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+         <xpath  expr="//form/sheet/group/group/field[@name='mobile_phone']" position="after">
+            <field name="choix" string='choix' />
+        </xpath>
+       
+    </field>
+</record>
+
+</odoo>

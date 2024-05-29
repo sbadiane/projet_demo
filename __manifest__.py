@@ -11,6 +11,7 @@
     'data': [
         # 'views/contact.xml',
         'views/purchase.xml',
+        # 'views/employer.xml',
         'security/security.xml',
         'security/ir.model.access.csv',
 
