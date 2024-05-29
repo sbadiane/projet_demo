@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+       <record id="email_template_vgm" model="mail.template">
+          <field name="name">Rapport VGM</field>
+          <field name="model_id" ref="unikerp_rdv.model_odepo_vgm"/>
+          <field name="subject">Rapport VGM</field>
+          <field name="report_template_ids" eval="[(4, ref('unikerp_rdv.action_vgm'))]"/>
+          <field name="description">Add Description</field>
+          <field name="body_html" type="html">
+           <p>
+            Bonjour monsieur veuillez recevoir le document du rapport vgm
+           </p>
+          </field>
+       </record>
+   </data>
+</odoo>

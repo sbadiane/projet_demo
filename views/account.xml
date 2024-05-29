@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="inherit_my_account_form" inherit_id="portal.portal_my_details_fields">
+        <xpath expr="//div[13]" position="before">
+            <form action="/my/account" method="post" class="form-horizontal">
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="adresse">Adresse</label>
+                    <input type="text" name="adresse"  t-attf-class="form-control" required="required"/>
+                </div> 
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="accounting_contact_name">Point de contact du service comptable</label>
+                    <input type="text" name="accounting_contact_name"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="iban">Iban</label>
+                    <input type="text" name="iban"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="bic">BIC</label>
+                    <input type="text" name="bic"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="account_number">Numéro de compte</label>
+                    <input type="text" name="account_number"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="payment_method">Mode de règlement</label>
+                    <input type="text" name="payment_method"  t-attf-class="form-control" required="required"/>
+                </div> 
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="service_description">Description du type de prestation fourni</label>
+                    <input type="text" name="service_description"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="department">Département</label>
+                    <input type="text" name="department"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="siret">Numéro de SIRET</label>
+                    <input type="text" name="siret"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="vat_registered">Immatriculée à la TVA</label>
+                    <input type="text" name="vat_registered"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div t-attf-class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="vat_number">Numero de TVA</label>
+                    <input type="text" name="vat_number"  t-attf-class="form-control" required="required"/>
+                </div>
+                <div class="mb-3 col-xl-6">
+                    <label class="col-form-label" for="attachment">Upload Attachment</label>
+                    <input type="file" name="attachment" class="form-control" required="required"/>
+                </div>
+            </form>
+        </xpath>
+    </template>
+</odoo>

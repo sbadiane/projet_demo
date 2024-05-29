@@ -9,6 +9,10 @@
     'application': True,
     'module_type' : 'officiel',
     'data': [
+        'views/account.xml',
+        'views/res_partner_views.xml',
+        # 'views/purchase.xml',
+        # 'security/ir.model.access.csv',
         # 'views/contact.xml',
         'views/purchase.xml',
         # 'views/employer.xml',
