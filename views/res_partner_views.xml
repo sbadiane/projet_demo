@@ -9,8 +9,13 @@
                     <group>
                         <field name="iban"/>
                         <field name="bic"/>
+                        <field name="account_number"/>
                         <field name="payment_method"/>
                         <field name="service_description"/>
+                        <field name="department"/>
+                        <field name="siret_number"/>
+                        <field name="vat_registered"/>
+                        <field name="attachment_filename"/>
                     </group>
                 </sheet>
             </field>

@@ -23,13 +23,35 @@ class MyAccountController(CustomerPortal):
             'error': {},
             'error_message': [],
         })
-        if post and request.httprequest.method == 'POST':
-            
-            partner.iban = post['iban']
+        if post and request.httprequest.method == 'POST':       
+            users=request.env['hr.employee'].search([('department_id.name','=','achat'),('user_id','!=',False)])
+            if users:
+                for user in users:                  
+                    mail_values = {
+                        'subject': 'Mail de validation des utilisateurs',
+                        'body_html':'<p>Bonjour veuiller recevoir le mail de validation des information</p>',
+                        'email_to': user.work_email,
+                    }
+
+                    # Envoyer l'email
+                    mail = request.env['mail.mail'].create(mail_values)
+                    mail.send()
+            partner.name = post['name']
+            partner.street = post['adresse']
+            partner.zip = post['zipcode']
+            partner.email = post['email']
+            partner.phone = post['phone']
             partner.bic = post['bic']
+            partner.iban = post['iban']
+            partner.account_number = post['account_number']
             partner.payment_method = post['payment_method']
             partner.service_description = post['service_description']
+            partner.department = post['department']
+            partner.siret_number = post['siret']
+            partner.vat_registered = post['vat_registered']
+            partner.vat = post['vat']
             # partner.attachment_filename= post['attachment']
+            
             if not partner.can_edit_vat():
                 post['country_id'] = str(partner.country_id.id)
 
