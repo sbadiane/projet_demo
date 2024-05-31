@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_purchase_order1" name="Purchase Order" inherit_id="purchase.portal_my_purchase_order" primary="True">
+        <xpath expr="//div/div/div[@id='portal_purchase_content']" position="after">
+                 <form action="/my/proposistiondate" method="post" class="form-horizontal">
+                   
+                    <div style="margin: 16px 0px 16px 0px;" >
+                        <br/>
+                        <div>
+                            <h3>PROPOSER UNE DATE </h3>
+                            <input type="datetime-local" id="date" name="date" />
+                            <t t-if="request.csrf_token()">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" name="po_id" t-att-value="order.id"/>
+                            </t>
+                            <button type="submit" style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">Envoyer</button>
+                        </div>
+                    </div>
+             </form>
+
+        </xpath>
+    </template>
+
+    <template id="template_date_valider" name="submit_date">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <center>
+                        <p>Votre Proposition a été bien prise en compte</p>
+                    </center>
+                </div>
+            </div>
+        </t> 
+    </template>  
+</odoo>

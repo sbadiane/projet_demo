@@ -1,20 +1,11 @@
 
 # -*- encoding: utf-8 -*-
 from odoo import models ,api ,fields, _
+from datetime import date
+
 
 class PurchaseOrderExt(models.Model):
     _inherit = "purchase.order"
-
-    # prix = fields.Monetary(string='prix',compute='_compute_prix')
-
-    # def _compute_prix(self):
-    #     for rec in self:
-    #         if rec.amount_total:
-    #             self.prix =rec.amount_total
-    #     else:
-    #          self.prix = self.prix
-        
-      
    
     @api.model
     def create(self,vals):
@@ -86,7 +77,6 @@ class PurchaseOrderExt(models.Model):
    )
     
     choix_prix_type =fields.Boolean(string="prix ",compute='_compute_prix_type')
-    choix_prix_type_capex =fields.Boolean(string="prix ",compute='_compute_prix_type_capex')
     choix_employer = fields.Boolean(string="bool",compute='_compute_departement')
 
     def _compute_departement(self):
@@ -100,13 +90,7 @@ class PurchaseOrderExt(models.Model):
     
 
     ##################################################################
-    def _compute_prix_type_capex(self):
-        for rec in self:        
-            if rec.amount_total > 2001 and rec.amount_total < 25000 and rec.type_commande == 'capex':
-                rec.choix_prix_type =True
-            else:
-                 rec.choix_prix_type =False
-    
+   
 
     #############################
     def _compute_prix_type(self):

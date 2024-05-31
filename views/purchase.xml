@@ -6,7 +6,7 @@
     <field name="inherit_id" ref="purchase.purchase_order_form"/>
     <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
-                    <button name="button_confirme" type="object" string="Valider par DDC" data-hotkey="l" invisible="choix_prix_type==False or choix_prix_type_capex==False"  groups="projet_demo.group_user_ddc" />
+                    <button name="button_confirme" type="object" string="Valider par DDC" data-hotkey="l" invisible="choix_prix_type==False"  groups="projet_demo.group_user_ddc" />
                     <!-- <button name="button_confirm" type="object" invisible="amount_total >2000"   string="Confirm test" context="{'validate_analytic': True}" class="oe_highlight" id="bid_confirm" data-hotkey="q"/> -->
             </xpath> 
             <xpath expr="//header/button[@id='draft_confirm']" position="replace">
@@ -17,10 +17,10 @@
             </xpath> 
             <xpath expr="//group/group/field[@name='tax_calculation_rounding_method']" position="before">
                 <field name="type_commande" string="Type De Commande "/>
-                <field name="amount_total" invisible="1"/>
-                <field name="choix_employer" string='choix_employer' />
-                <field name="choix_prix_type" string='choix_prix_type' />
-                <field name="choix_prix_type_capex" string='choix_prix_type_capex' />
+                <field name="amount_total" invisible="1"/>        
+                <field name="choix_employer" string='choix_employer' invisible="1" />
+                <field name="choix_prix_type" string='choix_prix_type' invisible="1" />
+
             </xpath> 
             <xpath expr="//header/field[@name='state']" position="replace">
                 <field name="state" widget="statusbar" statusbar_visible="draft,valide,valider_ddc,sent,purchase" readonly="1"/>
